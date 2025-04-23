@@ -1,4 +1,4 @@
-# PHP Post und Get mit Bücherüberischt projekt   
+# Funktionen in booklist.php
 |                                     **Code / Funktion** |                                              **Erklärung** |
 |:--------------------------------------------------------|:-----------------------------------------------------------|
 |                         `include("bookfunctions.php");` |                 Fügt die Datei mit den Buchfunktionen ein. |
@@ -8,6 +8,7 @@
 |        `header("Location: " . $\_SERVER['PHP\_SELF']);` |             Lädt die Seite neu, um das Formular zu leeren. |
 |                                               `exit();` | Beendet das Script, damit nichts doppelt gespeichert wird. |
 
+# Funktionen in bookfunctions.php
 |                                                 **Funktion** |                                                     **Zweck / Beschreibung** |
 |:-------------------------------------------------------------|:-----------------------------------------------------------------------------|
 | `writeBook($title, $author, $date, $notes, $rating, $image)` |   Öffnet `books.txt`, schreibt eine Zeile mit Buchinfos, schließt die Datei. |

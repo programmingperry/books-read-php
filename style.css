@@ -1,48 +1,287 @@
-.book-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 20px;
-  }
-  
-.book-card {
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
-}
-  
-.book-card p {
+/* General Styles */
+
+:root {
+    --dark-green: #3B4014;
+    --light-brown: #b3a999;
+    --light: #d8d1c3;
+    --red-brown: #402401;
+    --chocolate-brown: #26130D;
+    --dark-brown: #141313;
+
 }
 
-.book-card img {
-    width: 70%;
-    height: auto;
-    object-fit: cover;
+@font-face {
+    font-family: "CrimsonPro-Semibold";
+    src: url(./fonts/CrimsonPro-Medium.ttf);
+    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "CrimsonPro-Semibold";
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--dark-brown);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--light-brown);
+}
+
+a {
+    color: var(--light-brown);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--dark-green);
+    text-decoration: none;
+}
+
+a:visited {
+    color: var(--light-brown);
+    text-decoration: none;
+}
+
+a:active {
+    color: var(--light-brown);
+    text-decoration: none;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Form Container */
+.formContainer, #passwordForm {
+    background-color: #302521;
+    opacity: 1;
+    background-image:  linear-gradient(#362c1f 1.3px, transparent 1.3px), linear-gradient(to right, #362c1f 1.3px, #302521 1.3px);
+    background-size: 26px 26px;
+
+    padding: 20px;
     border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    margin: 50px 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: var(--light-brown);
+}
+
+/* Formular Eingabefelder */
+label {
+    color: var(--light-brown);
+}
+
+input[type="text"],
+input[type="date"],
+input[type="password"],
+select {
+    padding: 5px;
+    font-size: 1rem;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    background: var(--light-brown);
+    color: var(--dark-brown);
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: var(--dark-green);
+    color: var(--light);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 20%;
+    margin:  10px 0 0 0;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--red-brown);
+}
+
+textarea {
+    background-color: var(--light-brown);
+    resize: vertical;
+    overflow: auto;
+    padding: 5px;
+    font-size: 1rem;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    color: var(--dark-brown);
+}
+
+
+/* Read Books */
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); 
+    gap: 20px;
+    justify-items: center; 
+}
+
+.book-card {
+    background-color: #302521;
+    opacity: 1;
+    background-image:  linear-gradient(#362c1f 1.3px, transparent 1.3px), linear-gradient(to right, #362c1f 1.3px, #302521 1.3px);
+    background-size: 26px 26px;
+
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; 
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* .book-card:hover {
+    transform: scale(1.05); 
+}*/
+
+
+.book-card img {
+    max-width: 100%; 
+    height: auto; 
+    object-fit: cover; 
+    border-radius: 8px;
+    filter: grayscale(90%) brightness(80%);
+    transition: filter 0.4s ease;
+}
+
+.book-card img:hover {
+    filter: none;
+  }
+
+
+.book-card h3 {
+    margin: 10px 0;
+    color: var(--light);
+    font-size: 1.3rem; 
+}
+
+.book-card h4 {
+    margin: 10px 0;
+    color: var(--light-brown);
+    background-color: var(--dark-green);
+    padding: 0.5em;
+    border-radius: 10px;
+    font-size: 1.0rem; 
+}
+
+
+.book-card p {
+    color: var(--light-brown);
+    font-size: 1rem;
+    margin: 5px 0;
 }
 
 .stars {
-    color: rgb(158, 140, 36);
-    font-size: 1.2em;
+    color: var(--dark-green) !important;
+    font-size: 1.8rem !important;
 }
+
+/* Navigation */
+#headerSection {
+    text-align: center; 
+    margin: 2em 0;
+  }
   
-
-form {
-    background: #e4e4e4;
-    width: 100%;
-    padding: 5%;
+  nav {
+    display: flex; 
+    justify-content: center;
+    gap: 1em; 
+    margin: 1.5em 0 2.5em 0;
+  }
+  
+  #navLink {
+    background-color: var(--dark-green);
+    color: var(--light-brown);
     border-radius: 10px;
-}
-form input, select {
-    background: #ffffff;
+  }
+  
+  #navLink a {
+    font-size: 14px; 
+    text-decoration: none; 
+    display: block; 
     padding: 10px;
-    margin: 10px;
-    border: none;
-    width: 100%;
-    border-radius: 10px;
+  }
+  
+  #navLink a:hover {
+    background-color: var(--light-brown); 
+    color: var(--dark-green);
+    border-radius: 10px; 
+  }
+
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
+    /* Auf kleineren Bildschirmen (z.B. Tablets) */
+    .book-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* Etwas kleinere Karten */
+    }
+
+    .book-card {
+        width: 90%; /* Auf kleineren Bildschirmen Karten anpassen */
+    } 
+
+    .form-container {
+        max-width: 500px;
+    }
+
+    .book-list {
+        justify-content: flex-start;
+    }
 }
 
-form p {
-    text-align: center;
+@media (max-width: 480px) {
+    /* Auf mobilen Geräten */
+    .book-grid {
+        grid-template-columns: 1fr; /* Nur eine Karte pro Zeile */
+    }
+    
+    body {
+        padding: 10px;
+    }
+
+    .form-container {
+        max-width: 100%;
+    }
+
+    .book-card {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .book-list {
+        flex-direction: column;
+        align-items: center;
+    }
 }
+
+
+
+
+  

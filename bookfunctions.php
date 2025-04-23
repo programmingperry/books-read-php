@@ -22,7 +22,7 @@ function showBooks($filename) {
                 echo '<div class="book-card">';
                 echo "<img src=\"$image\" alt=\"Cover of $title\">";
                 echo "<h3>$title</h3>";
-                echo "<p><strong>$author</strong></p>";
+                echo "<h4>$author</h4>";
                 echo "<p>$date</p>";
                 echo "<p>$notes</p>";
                 echo "<p class='stars'>" . str_repeat("★", intval($rating)) . "</p>";
