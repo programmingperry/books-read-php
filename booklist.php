@@ -9,14 +9,13 @@
 
 <h1>Neles Bookshelf</h1>
 
-<h2>Add a book</h2>
-
 <form action="" method="POST">
-    Titel: <input type="text" name="title" value=""><br>
-    Autor: <input type="text" name="author" value=""><br>
-    Datum: <input type="date" name="date" value=""><br>
-    Notizen: <input type="text" name="notes" value=""><br>
-    <label for="rating">Bewertung:</label>
+    <h2>Add a book</h2>
+    <p>Title</p><input type="text" name="title" value=""><br>
+    <p>Author</p><input type="text" name="author" value=""><br>
+    <p>Date</p><input type="date" name="date" value=""><br>
+    <p>Notes</p><input type="text" name="notes" value=""><br>
+    <label for="rating"><p>Rating</p></label>
         <select name="rating" id="rating">
             <option value=" "> </option>
             <option value="1">★</option>
@@ -25,7 +24,7 @@
             <option value="4">★★★★</option>
             <option value="5">★★★★★</option>
         </select><br>
-    Bild-URL: <input type="text" name="image" value=""><br>
+    <p>Image-URL:</p><input type="text" name="image" value=""><br>
     <input type="submit" value="Save book">
 </form>
 
