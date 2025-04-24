@@ -2,7 +2,9 @@
 
 :root {
     --dark-green: #3B4014;
+    --gold: #8f8239;
     --light-brown: #b3a999;
+    --medium-light: #81796c;
     --light: #d8d1c3;
     --red-brown: #402401;
     --chocolate-brown: #26130D;
@@ -81,6 +83,52 @@ form {
     gap: 0;
 }
 
+.filterForm {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* für kleinere Bildschirme */
+    gap: 10px;
+    align-items: center;
+    background-color: #302521;
+    opacity: 1;
+    background-image:  linear-gradient(#362c1f 1.3px, transparent 1.3px), linear-gradient(to right, #362c1f 1.3px, #302521 1.3px);
+    background-size: 26px 26px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    justify-content: center;
+    max-width: 90%;
+    width: 80%;
+    margin-bottom: 4em;
+}
+
+.filterForm input[type="text"],
+.filterForm input[type="month"] {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    border: none;
+    min-width: 15%;
+    max-width: 20px;
+    background-color: var(--light-brown);
+    color: var(--dark-brown);
+}
+
+.filterForm input[type="submit"] {
+    background-color: var(--dark-green);
+    color: var(--light);
+    padding: 6px 12px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.filterForm input[type="submit"]:hover {
+    background-color: var(--red-brown);
+}
+
+
+
 h2 {
     text-align: center;
     margin-bottom: 15px;
@@ -90,12 +138,12 @@ h2 {
 /* Formular Eingabefelder */
 label {
     color: var(--light-brown);
+    padding-bottom: 0.3em;
 }
 
-input[type="text"],
-input[type="date"],
-input[type="password"],
+input,
 select {
+    appearance: none;
     padding: 5px;
     font-size: 1rem;
     border-radius: 4px;
@@ -105,6 +153,20 @@ select {
     background: var(--light-brown);
     color: var(--dark-brown);
 }
+
+
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+select[multiple] {
+    min-height: 100px;
+}
+
+
 
 input[type="submit"] {
     padding: 10px 20px;
@@ -149,12 +211,11 @@ textarea {
     opacity: 1;
     background-image:  linear-gradient(#362c1f 1.3px, transparent 1.3px), linear-gradient(to right, #362c1f 1.3px, #302521 1.3px);
     background-size: 26px 26px;
-
+    text-align: center;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%; 
-    text-align: center;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -168,7 +229,7 @@ textarea {
     height: auto; 
     object-fit: cover; 
     border-radius: 8px;
-    filter: grayscale(90%) brightness(80%);
+    filter: grayscale(20%) brightness(80%);
     transition: filter 0.4s ease;
 }
 
@@ -181,15 +242,17 @@ textarea {
     margin: 10px 0;
     color: var(--light);
     font-size: 1.3rem; 
+    text-align: center;
 }
 
 .book-card h4 {
     margin: 10px 0;
-    color: var(--light-brown);
+    color: var(--light);
     background-color: var(--dark-green);
     padding: 0.5em;
     border-radius: 10px;
     font-size: 1.0rem; 
+    text-align: center;
 }
 
 
@@ -197,11 +260,20 @@ textarea {
     color: var(--light-brown);
     font-size: 1rem;
     margin: 5px 0;
+    text-align: justify;
+    padding: 0.2em 0;
+    border-top: 1px solid var(--medium-light);
 }
 
 .stars {
-    color: var(--dark-green) !important;
+    color: var(--gold) !important;
     font-size: 1.8rem !important;
+    text-align: center !important;
+}
+
+.bookCardDescr {
+    font-style:italic;
+    color: var(--medium-light);
 }
 
 /* Navigation */

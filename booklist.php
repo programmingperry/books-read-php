@@ -9,9 +9,9 @@
 
 <?php 
 include("header.php");
+include("filterandsort.php");
+
 ?>
-
-
 
 <div class="book-list">
     <h2>Read Books</h2>
@@ -20,7 +20,7 @@ include("header.php");
     include("bookfunctions.php");
     showBooks("books.txt");
     ?>
-</<div>
+<div>
 
 </body>
 </html>
