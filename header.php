@@ -9,9 +9,9 @@
 <body>
 
 <div id="headerSection">
-<h1>Neles Bookshelf</h1>
+<h1><a href="./booknookstart.php">The Booknook</a></h1>
 <nav>
-  <div id="navLink"><a href="./login.php" class="button">Add a book</a></div>
+  <div id="navLink"><a href="./login.php" class="button">Login</a></div>
   <div id="navLink"><a href="./booklist.php" class="button">Bookshelf</a></div>
 </nav>
 </div>

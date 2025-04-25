@@ -1,3 +1,4 @@
+/* ------------------------------------------------------------------------------------------- */
 /* General Styles */
 
 :root {
@@ -62,6 +63,7 @@ a:active {
 }
 
 
+/* ------------------------------------------------------------------------------------------- */
 /* Form Container */
 .formContainer, #passwordForm {
     background-color: #302521;
@@ -135,6 +137,7 @@ h2 {
     color: var(--light-brown);
 }
 
+/* ------------------------------------------------------------------------------------------- */
 /* Formular Eingabefelder */
 label {
     color: var(--light-brown);
@@ -198,6 +201,7 @@ textarea {
 }
 
 
+/* ------------------------------------------------------------------------------------------- */
 /* Read Books */
 .book-grid {
     display: grid;
@@ -276,12 +280,40 @@ textarea {
     color: var(--medium-light);
 }
 
+
+/* ------------------------------------------------------------------------------------------- */
 /* Navigation */
 #headerSection {
     text-align: center; 
     margin: 2em 0;
   }
+
+  #headerStart {
+    text-align: center; 
+    margin: 20em 0;
+  }
+
+  #headerStart h1 {
+    font-size: 8em;
+  }
+
+  #buttonStart {
+    background-color: var(--dark-green);
+    color: var(--light-brown);
+    border-radius: 20px;
+    padding: 0.3em 2em ;
+  }
+
+  #buttonStart  a{
+    font-size: 3em;
+    display: block; 
+  }
   
+  #buttonStart a:hover {
+    background-color: var(--light-brown); 
+    color: var(--dark-green);
+  }
+
   nav {
     display: flex; 
     justify-content: center;
@@ -308,6 +340,60 @@ textarea {
     border-radius: 10px; 
   }
 
+
+/* ------------------------------------------------------------------------------------------- */
+/* Start Page */
+
+.startContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(40%, 1fr)); 
+    gap: 20px;
+    justify-items: center; 
+    margin: 5em 0 2.5em 0;
+}
+
+.startCard {
+    background-color: #302521;
+    opacity: 1;
+    background-image:  linear-gradient(#362c1f 1.3px, transparent 1.3px), linear-gradient(to right, #362c1f 1.3px, #302521 1.3px);
+    background-size: 26px 26px;
+    text-align: center;
+    padding: 3em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; 
+}
+
+.startTextContainer {
+    margin: 2em; 
+}
+
+.startText {
+    line-height: 2em; 
+}
+
+.loginButton {
+    background-color: var(--dark-green);
+    color: var(--light-brown);
+    border-radius: 10px;
+    padding: 0.5em;
+  }
+  
+  .loginButton a {
+    font-size: 14px; 
+    text-decoration: none; 
+    display: block; 
+  }
+  
+  .loginButton a:hover {
+    background-color: var(--light-brown); 
+    color: var(--dark-green);
+    border-radius: 10px; 
+  }
+
+
+
+/* ------------------------------------------------------------------------------------------- */
 /* Responsive Anpassungen */
 @media (max-width: 768px) {
     /* Auf kleineren Bildschirmen (z.B. Tablets) */
