@@ -44,4 +44,31 @@ function showBooks($filename) {
 
         fclose($file); 
     }
+
+require_once 'class_Book.php'; 
+
+function showBooksClass($filename) {
+    if (file_exists($filename)) {
+        $file = fopen($filename, "r");
+
+        echo '<div class="book-grid">';
+
+        while (!feof($file)) {
+            $line = fgets($file);
+
+            if (!empty(trim($line))) {
+                list($title, $author, $dateStart, $dateFin, $edition, $aquired, $pages, $hours, $published, $genres, $notes, $rating, $image) = explode(";", $line);
+
+                // ➔ Buch-Objekt erstellen
+                $book = new Book($title, $author, $dateStart, $dateFin, $edition, $aquired, $pages, $hours, $published, $genres, $notes, $rating, $image);
+
+                // ➔ Methode anzeigen() aufrufen
+                $book->display();
+            }
+        }
+
+        echo '</div>';
+
+        fclose($file);
+    }
 }
